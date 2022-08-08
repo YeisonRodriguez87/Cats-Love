@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# 😻Cats Love App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="left">
+  <img height="200" src="./cat.png" />
+</p>
 
-## Available Scripts
+## 📝Descripción:
 
-In the project directory, you can run:
+<p>En este proyecto se desarrolló una SPA (Single Page Application), en la cual se pueden ver diversa cantidad de gatos en adopción, para que así se puedan contactar con quien los tiene y les puedan dar un hogar. Los mismos son posteados por las personas que los encuentren y que no puedan tenerlos con ellos o cuidarlos. La misma tiene funcionalidades tales como filtrar/ordenar gatos por ciudad, paginado para poder ver 10 gatos por página y formulario para postear gatos para ser adoptados.
+</p>
 
-### `npm start`
+#### Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+__Pagina inicial__- Landing page con:
+- [ ] Imagen de fondo representativa del proyecto.
+- [ ] Botón para ingresar al home (`Ruta principal`)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+__Ruta principal__- Contiene:
+- [ ] Área donde se verá el listado de gatos con su imagen, nombre, edad y ciudad.
+- [ ] Botones/Opciones para filtrar por ciudad.
+- [ ] Botones/Opciones para ordenar tanto ascendente como descendentemente los gatos por orden alfabético.
+- [ ] Paginado para ir buscando y mostrando los siguientes gatos, 8 gatos por pagina.
 
-### `npm test`
+__Ruta de detalle de gato__- Contiene:
+- [ ] Los campos mostrados en la ruta principal para cada gato (imagen, nombre, edad y ciudad)
+- [ ] Descripción.
+- [ ] Teléfono.
+- [ ] Altura.
+- [ ] Peso.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+__Ruta de posteo de gato en adopción__- Contiene:
+- [ ] Un formulario __controlado con JavaScript__ con los siguientes campos:
+  - Nombre
+  - Edad
+  - Sexo
+  - Descripción
+  - Teléfono
+  - Altura
+  - Ciudad
+  - Imagen
+- [ ] Botón/Opción para postear un nuevo gato.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀Para poder iniciar el proyecto en su navegador:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 1. Forkear el repositorio para tener una copia del mismo en sus cuentas
+ 2. Clonar el repositorio en sus computadoras para comenzar a trabajar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+__🚨IMPORTANTE:🚨__ Es necesario contar mínimamente con la última versión estable de Node y NPM. Asegurese de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Actualmente (Agosto 2022) las versiónes necesarias son:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ * __Node__: 16.15.1 o mayor
+ * __NPM__: 8.11.0 o mayor
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para verificar que versión tienen instalada:
 
-## Learn More
+> node -v
+>
+> npm -v
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Tecnologías usadas:
+- [ ] Bootstrap
+- [ ] React
+- [ ] Redux
+- [ ] Express
+- [ ] Sequelize - MySQL
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
 
-### Advanced Configuration
+__Pagina inicial__: deben armar una landing page con
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [ ] Alguna imagen de fondo representativa al proyecto
+- [ ] Botón para ingresar al home (`Ruta principal`)
 
-### Deployment
+__Ruta principal__: debe contener
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [ ] Input de búsqueda para encontrar razas de perros por nombre
+- [ ] Área donde se verá el listado de razas de perros. Deberá mostrar su:
+  - Imagen
+  - Nombre
+  - Temperamento
+  - Peso
+- [ ] Botones/Opciones para filtrar por:
+  - Temperamento
+  - Raza existente (es decir las que vienen de la API) o agregada por nosotros (creadas mediante el form)
+- [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente las razas de perro por:
+  - Orden alfabético
+  - Peso
+- [ ] Paginado para ir buscando y mostrando las siguientes razas, mostrando 8 razas por página.
 
-### `npm run build` fails to minify
+__IMPORTANTE__: Dentro de la Ruta Principal se deben mostrar tanto las razas de perros traidas desde la API como así también las de la base de datos, pero NO está permitido almacenar en la base de datos las razas de perros de la API sino que solamente se pueden guardar aquellas creadas desde el form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+__Ruta de detalle de gato__: debe contener
+
+- [ ] Los campos mostrados en la ruta principal para cada raza (imagen, nombre y temperamento)
+- [ ] Altura
+- [ ] Peso
+- [ ] Años de vida
+
+__Ruta de creación de gato__: debe contener
+
+- [ ] Un formulario __controlado con JavaScript__ con los siguientes campos:
+  - Nombre
+  - Altura (Diferenciar entre altura mínima y máxima)
+  - Peso (Diferenciar entre peso mínimo y máximo)
+  - Años de vida
+- [ ] Botón/Opción para publicar un nuevo gato

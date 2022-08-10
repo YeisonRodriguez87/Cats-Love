@@ -1,17 +1,19 @@
 import React from "react";
-import { Button } from 'react-bootstrap';
+import { Button, Container } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
-
-function LandingPage() {
+export default function LandingPage() {
   return (
-    <div>
-        <div>
-            <h1>😻¡Bienvenid@ a Cats Love!</h1>
-            <p>Un lugar en donde tal vez puedas encontrar al amor de tu vida...❤️​</p>
-        </div>
-        <Button>Ingresar</Button>
-    </div>
+    <>
+      <Container fluid className="App-header">
+        <h1>😻¡Bienvenid@ a Cats Love!</h1>
+        <p className="text-center mt-4 mb-4">
+          Un lugar en donde tal vez puedas encontrar al amor de tu vida...❤️​
+        </p>
+        <Link to = '/home'>
+            <Button variant="secondary">Ingresar</Button>
+        </Link>        
+      </Container>
+    </>
   );
 }
-
-export default LandingPage;

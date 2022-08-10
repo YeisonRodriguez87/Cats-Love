@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_CATS } from "./type";
+import { GET_CATS, FILTER_CATS_BY_SEX, ORDER_CATS } from "./type";
 
 export function getCats() {
   return async function (distpach) {
@@ -14,6 +14,24 @@ export function getCats() {
     }
   };
 }
+
+export function filterCatsBySex(payload) {
+  return {
+    type: FILTER_CATS_BY_SEX,
+    payload
+  };
+}
+
+export const orderCats = (payload) => {
+  return {
+    type: ORDER_CATS,
+    payload,
+  };
+};
+
+
+
+
 
 export function postCat(payload) {
   return async function (dispatch) {

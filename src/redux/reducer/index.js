@@ -1,8 +1,15 @@
-import { GET_CATS, FILTER_CATS_BY_SEX, ORDER_CATS } from "../actions/type";
+import {
+  GET_CATS,
+  FILTER_CATS_BY_SEX,
+  ORDER_CATS,
+  CAT_DETAIL,
+  POST_CAT,
+} from "../actions/type";
 
 const initialState = {
   cats: [],
   allCats: [],
+  details: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -44,6 +51,15 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         cats: ordered,
+      };
+    case CAT_DETAIL:
+      return {
+        ...state,
+        details: action.payload,
+      };
+    case POST_CAT:
+      return {
+        ...state,
       };
     default:
       return { ...state };

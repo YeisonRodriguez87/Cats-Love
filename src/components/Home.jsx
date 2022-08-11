@@ -14,7 +14,7 @@ export default function Home() {
 
   //Paginado
   const [currentPage, setCurrentPage] = useState(1);
-  const [catsPerPage /*setCatsPerPage*/] = useState(6);
+  const [catsPerPage /*setCatsPerPage*/] = useState(8);
   const indexOfLastCat = currentPage * catsPerPage;
   const indexOfFirstCat = indexOfLastCat - catsPerPage;
   const currentCats = allCats.slice(indexOfFirstCat, indexOfLastCat);
@@ -47,6 +47,10 @@ export default function Home() {
   return (
     <>
       <NavBar />
+      <Button>
+        <Link to = '/cat' style= {{textDecoration: 'none', color: 'black'}}>Publica un Michi</Link>
+      </Button>
+      
       <Button
         variant="success"
         onClick={(e) => {
@@ -84,6 +88,7 @@ export default function Home() {
                   imagen={el.imagen}
                   nombre={el.nombre}
                   edad={el.edad}
+                  sexo={el.sexo}
                   ciudad={el.ciudad}
                 />
                 <Link to={"/" + el.id}>

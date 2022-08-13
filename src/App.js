@@ -4,6 +4,8 @@ import LandingPage from './components/LandingPage';
 import Home from './components/Home';
 import Details from "./components/Details";
 import CatPost from "./components/CatPost";
+import Error404 from "./components/Error404";
+import Nosotros from "./components/Nosotros";
 
 function App() {
   return (
@@ -12,9 +14,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/home" element={<Home />} />
-          <Route path = '/:id' element = {<Details/>}/>
+          <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/cat" element={<CatPost />} />
-          <Route path = '*' element = {<h1>PAGE NOT FOUND!!!</h1>}/>
+          <Route path = '/:id' element = {<Details/>}/>          
+          <Route path = '*' element = {<Error404 />}/>
         </Routes>
       </BrowserRouter>
     </div>

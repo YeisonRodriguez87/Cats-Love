@@ -1,10 +1,11 @@
 import React from 'react'
+import styles from './Card.module.css'
 
 export default function Card({imagen, nombre, edad, sexo, ciudad}) {
   return (
-    <div>
+    <div className= {styles.divCard}>
       <div>   
-        <img src= {imagen} alt= "Foto Michi" width="230px" height="250px"/>
+        <img src= {imagen} className= {styles.imgCat} alt= "Foto Michi"/>
       </div>
       <div>
         <h4>{nombre}</h4>

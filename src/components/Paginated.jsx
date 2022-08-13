@@ -12,7 +12,12 @@ export default function Paginated({ catsPerPage, allCats, paged }) {
       <nav>
         <ul>
           {pageNumbers?.map((number) => (
-            <Button variant="secondary" key={number} onClick={() => paged(number)}>
+            <Button
+              className="m-1 mt-5"
+              variant="secondary"
+              key={number}
+              onClick={() => paged(number)}
+            >
               {number}
             </Button>
           ))}

@@ -4,7 +4,7 @@ import { GET_CATS, FILTER_CATS_BY_SEX, ORDER_CATS, CAT_DETAIL } from "./type";
 export function getCats() {
   return async function (distpach) {
     try {
-      const cats = await axios.get("https://cats-love-back.herokuapp.com/cats/");
+      const cats = await axios.get("https://cats-love-back.herokuapp.com/cats");
       return distpach({
         type: GET_CATS,
         payload: cats.data,

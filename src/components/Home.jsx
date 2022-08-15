@@ -49,7 +49,7 @@ export default function Home() {
     dispatch(getCats());
     setTimeout(() => {
       setLoader(false);
-    }, 1500);
+    }, 3000);
   }, [dispatch]);
 
   return (
@@ -94,7 +94,7 @@ export default function Home() {
                       sexo={el.sexo}
                       ciudad={el.ciudad}
                     />
-                    <Link to={"/" + el.id}>
+                    <Link to={"/detail/" + el.id}>
                       <Button variant="success">Ver más</Button>
                     </Link>
                   </div>

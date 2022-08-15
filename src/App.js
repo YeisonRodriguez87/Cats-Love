@@ -16,7 +16,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/cat" element={<CatPost />} />
-          <Route path = '/:id' element = {<Details/>}/>          
+          <Route path = '/detail/:id' element = {<Details/>}/>          
           <Route path = '*' element = {<Error404 />}/>
         </Routes>
       </BrowserRouter>

@@ -1,10 +1,14 @@
 import { Spinner } from 'react-bootstrap';
+import styles from "./Loading.module.css";
 
 export default function Loading() {
   return (
     <>
-      <Spinner animation="grow" size='lg'/>
-      
+      <div className={styles.divPadre}>
+        <div className={styles.divHijo}>
+          <Spinner className={styles.spinner} animation="grow" size='lg'/>
+        </div>
+      </div>
     </>
   );
 }

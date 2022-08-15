@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getDetailsCat } from "../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
 import Loading from "./Loading";
+import NavBar from './NavBar'
 
 export default function Details() {
   const dispatch = useDispatch();
@@ -17,14 +17,15 @@ export default function Details() {
     dispatch(getDetailsCat(id));
     setTimeout(() => {
       setLoader(false)
-    }, 1500);
+    }, 3000);
   }, [dispatch, id]);
 
   return (
     <>
+    <NavBar />
     {loader ? (
-                <Loading />
-            ) :
+        <Loading />
+      ) :
       <Container className="mt-5">
         <Row>
           <Col>
@@ -67,7 +68,7 @@ export default function Details() {
           </Col>
         </Row>
       </Container>
-}
+    }
     </>
   );
 }

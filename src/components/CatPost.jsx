@@ -6,55 +6,20 @@ import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import Loading from "./Loading";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import { Formik, ErrorMessage } from "formik";
+import styles from './CatPost.module.css'
 
 export default function CatPost() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loader, setLoader] = useState(true);
-  const [input, setInput] = useState({
-    nombre: "",
-    sexo: "",
-    altura: "",
-    peso: "",
-    edad: "",
-    ciudad: "",
-    telefono: "",
-    imagen: "",
-    descripcion: "",
-  });
-
-  function handleChange(e) {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
-    console.log(input);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    dispatch(postCat(input));
-    alert("Michi publicad@ con éxito!!");
-    setInput({
-      nombre: "",
-      sexo: "",
-      altura: "",
-      peso: "",
-      edad: "",
-      ciudad: "",
-      telefono: "",
-      imagen: "",
-      descripcion: "",
-    });
-    navigate("/home");
-  }
 
   useEffect(() => {
     setLoader(true);
     dispatch(postCat());
     setTimeout(() => {
       setLoader(false);
-    }, 1500);
+    }, 3000);
   }, [dispatch]);
 
   return (
@@ -65,122 +30,216 @@ export default function CatPost() {
       ) : (
         <Container fluid className="col-5 mt-5 mb-5">
           <h1>Publica un Michi</h1>
-          <Form onSubmit={(e) => handleSubmit(e)}>
-            <Row>
-              <Col>
-                <Form.Group className="mb-4 mt-4" controlId="nombre">
-                  <Form.Control
-                    type="text"
-                    autoComplete="off"
-                    name="nombre"
-                    onChange={handleChange}
-                    placeholder="Nombre"
-                  />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Select
-                  className="mb-4 mt-4"
-                  name="sexo"
-                  onChange={handleChange}
-                >
-                  <option>Seleccione sexo</option>
-                  <option value="Hembra">Hembra</option>
-                  <option value="Macho">Macho</option>
-                </Form.Select>
-              </Col>
-            </Row>
+          <Formik
+            initialValues={{
+              nombre: "",
+              sexo: "",
+              altura: "",
+              peso: "",
+              edad: "",
+              ciudad: "",
+              telefono: "",
+              imagen: "",
+              descripcion: "",
+            }}
+            validate={(input) => {
+              let errors = {};
+              let regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
-            <Row>
-              <Col>
-                <Form.Group className="mb-4" controlId="altura">
-                  <Form.Control
-                    type="number"
-                    autoComplete="off"
-                    name="altura"
-                    onChange={handleChange}
-                    placeholder="Altura en centímetros"
-                  />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-4" controlId="peso">
-                  <Form.Control
-                    type="number"
-                    autoComplete="off"
-                    name="peso"
-                    onChange={handleChange}
-                    placeholder="Peso en kilogramos"
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
+              if (!input.nombre.trim()) {
+                errors.nombre = "*Nombre requerido";
+              } else if (!regexNombre.test(input.nombre.trim())) {
+                errors.nombre =
+                  "*El campo nombre solo acepta letras y espacios en blanco";
+              }
+              if(!input.sexo){
+                errors.sexo = "*Sexo requerido";
+              }
+              if(!input.altura){
+                errors.altura = "*Altura requerida";
+              }else if(input.altura < 1 || input.altura > 30){
+                  errors.altura = "*La altura debe ser entre 1 y 30 centímetros";
+              };
+              if(!input.peso){
+                errors.peso = "*Peso requerido";
+              }else if(input.peso < 1 || input.peso > 10){
+                  errors.peso = "*El peso debe ser entre 1 y 10 kilogramos";
+              };
+              if(!input.edad){
+                errors.edad = "*Edad requerida";
+              }else if(input.edad < 1 || input.edad > 20){
+                  errors.edad = "*La edad debe ser entre 1 y 20 años";
+              };
+              if (!input.ciudad.trim()) {
+                errors.ciudad = "*Ciudad requerida";
+              } else if (!regexNombre.test(input.ciudad.trim())) {
+                errors.ciudad =
+                  "*El campo ciudad solo acepta letras y espacios en blanco";
+              }
+              return errors;
+            }}
+            onSubmit={(input, {resetForm}) => {
+              dispatch(postCat(input));              
+              resetForm();
+              alert("Michi publicad@ con éxito!!");
+              navigate("/home");
+            }}
+          >
+            {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+              <Form onSubmit={handleSubmit}>
+                <Row>
+                  <Col>
+                    <Form.Group className="mb-4 mt-4" controlId="nombre">
+                      <Form.Control
+                        type="text"
+                        autoComplete="off"
+                        name="nombre"
+                        placeholder="Nombre"
+                        value={values.nombre}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <ErrorMessage name="nombre" component={() => (
+                        <p className= {styles.pErrors}>{errors.nombre}</p>
+                      )}/>                    
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Select
+                      className="mb-4 mt-4"
+                      name="sexo"
+                      value={values.sexo}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                    >
+                      <option>Seleccione sexo</option>
+                      <option value="Hembra">Hembra</option>
+                      <option value="Macho">Macho</option>
+                    </Form.Select>
+                    <ErrorMessage name="sexo" component={() => (
+                        <p className= {styles.pErrors}>{errors.sexo}</p>
+                      )}/> 
+                  </Col>
+                </Row>
 
-            <Row>
-              <Col>
-                <Form.Group className="mb-4" controlId="edad">
-                  <Form.Control
-                    type="number"
-                    autoComplete="off"
-                    name="edad"
-                    onChange={handleChange}
-                    placeholder="Edad en meses"
-                  />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-4" controlId="ciudad">
-                  <Form.Control
-                    type="text"
-                    autoComplete="off"
-                    name="ciudad"
-                    onChange={handleChange}
-                    placeholder="Ciudad"
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
+                <Row>
+                  <Col>
+                    <Form.Group className="mb-4" controlId="altura">
+                      <Form.Control
+                        type="number"
+                        autoComplete="off"
+                        name="altura"
+                        placeholder="Altura en centímetros"
+                        value={values.altura}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <ErrorMessage name="altura" component={() => (
+                        <p className= {styles.pErrors}>{errors.altura}</p>
+                      )}/>
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group className="mb-4" controlId="peso">
+                      <Form.Control
+                        type="number"
+                        autoComplete="off"
+                        name="peso"
+                        placeholder="Peso en kilogramos"
+                        value={values.peso}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <ErrorMessage name="peso" component={() => (
+                        <p className= {styles.pErrors}>{errors.peso}</p>
+                      )}/>
+                    </Form.Group>
+                  </Col>
+                </Row>
 
-            <Row>
-              <Col>
-                <Form.Group className="mb-4" controlId="telefono">
+                <Row>
+                  <Col>
+                    <Form.Group className="mb-4" controlId="edad">
+                      <Form.Control
+                        type="number"
+                        autoComplete="off"
+                        name="edad"
+                        placeholder="Edad en años"
+                        value={values.edad}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <ErrorMessage name="edad" component={() => (
+                        <p className= {styles.pErrors}>{errors.edad}</p>
+                      )}/>
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group className="mb-4" controlId="ciudad">
+                      <Form.Control
+                        type="text"
+                        autoComplete="off"
+                        name="ciudad"
+                        placeholder="Ciudad"
+                        value={values.ciudad}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <ErrorMessage name="ciudad" component={() => (
+                        <p className= {styles.pErrors}>{errors.ciudad}</p>
+                      )}/>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <Form.Group className="mb-4" controlId="telefono">
+                      <Form.Control
+                        type="tel"
+                        autoComplete="off"
+                        name="telefono"
+                        placeholder="Teléfono"
+                        value={values.telefono}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group className="mb-4" controlId="imagen">
+                      <Form.Control
+                        type="text"
+                        autoComplete="off"
+                        name="imagen"
+                        placeholder="Imagen https://..."
+                        value={values.imagen}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Form.Group className="mb-3" controlId="descripcion">
                   <Form.Control
-                    type="tel"
+                    name="descripcion"
                     autoComplete="off"
-                    name="telefono"
+                    placeholder="Descripción"
+                    as="textarea"
+                    rows={3}
+                    value={values.descripcion}
                     onChange={handleChange}
-                    placeholder="Teléfono"
+                    onBlur={handleBlur}
                   />
                 </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-4" controlId="imagen">
-                  <Form.Control
-                    type="text"
-                    autoComplete="off"
-                    name="imagen"
-                    onChange={handleChange}
-                    placeholder="Imagen https://..."
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
 
-            <Form.Group className="mb-3" controlId="descripcion">
-              <Form.Control
-                name="descripcion"
-                autoComplete="off"
-                placeholder="Descripción"
-                as="textarea"
-                rows={3}
-                onChange={handleChange}
-              />
-            </Form.Group>
-
-            <Button className="m-2" variant="success" type="submit">
-              Publicar
-            </Button>
-          </Form>
+                <Button className="m-2" variant="success" type="submit">
+                  Publicar
+                </Button>
+              </Form>
+            )}
+          </Formik>
         </Container>
       )}
       <Footer />

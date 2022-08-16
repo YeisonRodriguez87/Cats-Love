@@ -8,28 +8,28 @@ export default function NavBar() {
       <Navbar
         collapseOnSelect
         expand="lg"
+        className="sticky-top"
         bg="dark"
         variant="dark"
       >
         <Container>
-          <Navbar.Brand>
+          <Navbar.Brand href="/home">
             <img
               className={styles.imgLogo}
               src={require("../images/fondo_Landing.png")}
               alt="Logo"
-              srcset=""
             />
             Cats Love
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
+            <Nav className="justify-content-end">
               <Nav.Link href="/home">Inicio</Nav.Link>
               <Nav.Link href="/nosotros">Nosotros</Nav.Link>
               <Nav.Link href="/cat">Publicar</Nav.Link>
-              <Nav.Link href="/" className="bg-danger rounded">
-                Salir
-              </Nav.Link>
+              <Navbar.Text>
+                <a href="/">Salir</a>
+              </Navbar.Text>
             </Nav>
           </Navbar.Collapse>
         </Container>

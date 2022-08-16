@@ -49,7 +49,7 @@ export default function Home() {
     dispatch(getCats());
     setTimeout(() => {
       setLoader(false);
-    }, 5000);
+    }, 4000);
   }, [dispatch]);
 
   return (

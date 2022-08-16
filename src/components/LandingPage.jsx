@@ -13,7 +13,6 @@ export default function LandingPage() {
               className={styles.imgLanding}
               src={require("../images/fondo_Landing.png")}
               alt="foto-landing"
-              srcset=""
             />
           </Col>
           <Col className="mt-5">

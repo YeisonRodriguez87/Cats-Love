@@ -5,7 +5,7 @@ import Card from "./Card";
 import Paginated from "./Paginated";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
-import { Button, Container } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import styles from "./Home.module.css";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
@@ -49,31 +49,51 @@ export default function Home() {
     dispatch(getCats());
     setTimeout(() => {
       setLoader(false);
-    }, 6000);
+    }, 5000);
   }, [dispatch]);
 
   return (
-    <> 
-      <NavBar />     
+    <>
+      <NavBar />
       <Container fluid className="mt-2">
-        <Button className="m-2" as="input" type="reset" value="Reset" variant="danger" onClick={(e) => {
-            handleAllCats(e);
-        }}/>
-        <div>
-          <label>Ordenar por</label>
-          <select onChange={handleOrdered}>
-            <option value="Asc">A-Z</option>
-            <option value="Desc">Z-A</option>
-            <option value="Mayor">Mayor edad</option>
-            <option value="Menor">Menor edad</option>
-          </select>
-          <label>Filtrar por</label>
-          <select onChange={handleFilterSex}>
-            <option value="All">Tod@s</option>
-            <option value="Macho">Macho</option>
-            <option value="Hembra">Hembra</option>
-          </select>
-        </div>
+        <Container className="col-5">
+          <Row className="col-11">
+            <Col>
+              <Form.Select size="md" className="mt-5" onChange={handleOrdered}>
+                <option>Ordenar por</option>
+                <option value="Asc">A-Z</option>
+                <option value="Desc">Z-A</option>
+                <option value="Mayor">Mayor edad</option>
+                <option value="Menor">Menor edad</option>
+              </Form.Select>
+            </Col>
+            <Col>
+              <Form.Select
+                size="md"
+                className="mt-5"
+                onChange={handleFilterSex}
+              >
+                <option>Filtrar por</option>
+                <option value="All">Tod@s</option>
+                <option value="Macho">Macho</option>
+                <option value="Hembra">Hembra</option>
+              </Form.Select>
+            </Col>
+            <Col className="col-1">
+              <Button
+                className="mt-5"
+                size="md"
+                as="input"
+                type="reset"
+                value="Reset Filtros"
+                variant="danger"
+                onClick={(e) => {
+                  handleAllCats(e);
+                }}
+              />
+            </Col>
+          </Row>
+        </Container>
         <Paginated
           catsPerPage={catsPerPage}
           allCats={allCats.length}
@@ -95,7 +115,7 @@ export default function Home() {
                       ciudad={el.ciudad}
                     />
                     <Link to={"/detail/" + el.id}>
-                      <Button variant="success">Ver más</Button>
+                      <Button variant="info">Ver más</Button>
                     </Link>
                   </div>
                 </>
@@ -103,8 +123,8 @@ export default function Home() {
             })
           )}
         </div>
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 }

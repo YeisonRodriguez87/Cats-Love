@@ -9,9 +9,9 @@ export default function Card({imagen, nombre, edad, sexo, ciudad}) {
       </div>
       <div>
         <h4>{nombre}</h4>
-        <h5>{edad} años</h5>
+        <h6>{edad} años</h6>
         <h6>{sexo}</h6>
-        <h6>Ciudad: {ciudad}</h6>                          
+        <h6>{ciudad}</h6>                          
       </div>
     </div>
   )

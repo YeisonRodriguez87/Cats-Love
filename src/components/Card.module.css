@@ -1,10 +1,10 @@
 .divCard{
-    border-radius: 10px;
+    border-radius: 0.8rem;
     border-color: black;
-    box-shadow: 0 0 8px 3px rgb(240, 235, 235);
+    box-shadow: 0 0 4px 2px rgb(240, 235, 235);
     color: black;    
     font-family:cursive;
-    background-color: #2d98e9;
+    background-color: whitesmoke;
     border: 1px solid rgba(136, 101, 206, 0);
     margin-top: 0.8rem;
     margin-bottom: 0.5rem;
@@ -19,8 +19,8 @@
 .imgCat{
     width: 250px;
     height: 200px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
     margin-bottom: 1rem;
 }
 

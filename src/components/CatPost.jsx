@@ -7,7 +7,7 @@ import Loading from "./Loading";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Formik, ErrorMessage } from "formik";
-import styles from './CatPost.module.css'
+import styles from "./CatPost.module.css";
 
 export default function CatPost() {
   const dispatch = useDispatch();
@@ -45,6 +45,9 @@ export default function CatPost() {
             validate={(input) => {
               let errors = {};
               let regexNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+              let regexTel = /^\d{10}$/;
+              //eslint-disable-next-line
+              let regexURL = /(http|https):\/\/[a-zA-Z\.\/-]+/;
 
               if (!input.nombre.trim()) {
                 errors.nombre = "*Nombre requerido";
@@ -52,40 +55,55 @@ export default function CatPost() {
                 errors.nombre =
                   "*El campo nombre solo acepta letras y espacios en blanco";
               }
-              if(!input.sexo){
+              if (!input.sexo) {
                 errors.sexo = "*Sexo requerido";
               }
-              if(!input.altura){
+              if (!input.altura) {
                 errors.altura = "*Altura requerida";
-              }else if(input.altura < 1 || input.altura > 30){
-                  errors.altura = "*La altura debe ser entre 1 y 30 centímetros";
-              };
-              if(!input.peso){
+              } else if (input.altura < 1 || input.altura > 30) {
+                errors.altura = "*La altura debe ser entre 1 y 30 centímetros";
+              }
+              if (!input.peso) {
                 errors.peso = "*Peso requerido";
-              }else if(input.peso < 1 || input.peso > 10){
-                  errors.peso = "*El peso debe ser entre 1 y 10 kilogramos";
-              };
-              if(!input.edad){
+              } else if (input.peso < 1 || input.peso > 10) {
+                errors.peso = "*El peso debe ser entre 1 y 10 kilogramos";
+              }
+              if (!input.edad) {
                 errors.edad = "*Edad requerida";
-              }else if(input.edad < 1 || input.edad > 20){
-                  errors.edad = "*La edad debe ser entre 1 y 20 años";
-              };
+              } else if (input.edad < 1 || input.edad > 20) {
+                errors.edad = "*La edad debe ser entre 1 y 20 años";
+              }
               if (!input.ciudad.trim()) {
                 errors.ciudad = "*Ciudad requerida";
               } else if (!regexNombre.test(input.ciudad.trim())) {
                 errors.ciudad =
                   "*El campo ciudad solo acepta letras y espacios en blanco";
               }
+              if (!input.telefono.trim()) {
+                errors.telefono = "*Teléfono requerido";
+              } else if (!regexTel.test(input.telefono.trim())) {
+                errors.telefono =
+                  "*El número de teléfono debe contener 10 dígitos";
+              }
+              if (!input.imagen.trim()) {
+                errors.imagen = "*Imagen requerida";
+              } else if (!regexURL.test(input.imagen.trim())) {
+                errors.imagen =
+                  "*EL formato es inválido, ingrese una URL válida";
+              }
+              if (!input.descripcion.trim()) {
+                errors.descripcion = "*Ingrese una descripción";
+              }
               return errors;
             }}
-            onSubmit={(input, {resetForm}) => {
-              dispatch(postCat(input));              
+            onSubmit={(input, { resetForm }) => {
+              dispatch(postCat(input));
               resetForm();
               alert("Michi publicad@ con éxito!!");
               navigate("/home");
             }}
           >
-            {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+            {({ values, errors, handleSubmit, handleChange, handleBlur }) => (
               <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col>
@@ -99,9 +117,12 @@ export default function CatPost() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
-                      <ErrorMessage name="nombre" component={() => (
-                        <p className= {styles.pErrors}>{errors.nombre}</p>
-                      )}/>                    
+                      <ErrorMessage
+                        name="nombre"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.nombre}</p>
+                        )}
+                      />
                     </Form.Group>
                   </Col>
                   <Col>
@@ -116,12 +137,14 @@ export default function CatPost() {
                       <option value="Hembra">Hembra</option>
                       <option value="Macho">Macho</option>
                     </Form.Select>
-                    <ErrorMessage name="sexo" component={() => (
-                        <p className= {styles.pErrors}>{errors.sexo}</p>
-                      )}/> 
+                    <ErrorMessage
+                      name="sexo"
+                      component={() => (
+                        <p className={styles.pErrors}>{errors.sexo}</p>
+                      )}
+                    />
                   </Col>
                 </Row>
-
                 <Row>
                   <Col>
                     <Form.Group className="mb-4" controlId="altura">
@@ -134,9 +157,12 @@ export default function CatPost() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
-                      <ErrorMessage name="altura" component={() => (
-                        <p className= {styles.pErrors}>{errors.altura}</p>
-                      )}/>
+                      <ErrorMessage
+                        name="altura"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.altura}</p>
+                        )}
+                      />
                     </Form.Group>
                   </Col>
                   <Col>
@@ -150,13 +176,15 @@ export default function CatPost() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
-                      <ErrorMessage name="peso" component={() => (
-                        <p className= {styles.pErrors}>{errors.peso}</p>
-                      )}/>
+                      <ErrorMessage
+                        name="peso"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.peso}</p>
+                        )}
+                      />
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col>
                     <Form.Group className="mb-4" controlId="edad">
@@ -169,9 +197,12 @@ export default function CatPost() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
-                      <ErrorMessage name="edad" component={() => (
-                        <p className= {styles.pErrors}>{errors.edad}</p>
-                      )}/>
+                      <ErrorMessage
+                        name="edad"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.edad}</p>
+                        )}
+                      />
                     </Form.Group>
                   </Col>
                   <Col>
@@ -185,13 +216,15 @@ export default function CatPost() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
-                      <ErrorMessage name="ciudad" component={() => (
-                        <p className= {styles.pErrors}>{errors.ciudad}</p>
-                      )}/>
+                      <ErrorMessage
+                        name="ciudad"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.ciudad}</p>
+                        )}
+                      />
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col>
                     <Form.Group className="mb-4" controlId="telefono">
@@ -199,10 +232,16 @@ export default function CatPost() {
                         type="tel"
                         autoComplete="off"
                         name="telefono"
-                        placeholder="Teléfono"
+                        placeholder="Teléfono 11 23456789"
                         value={values.telefono}
                         onChange={handleChange}
                         onBlur={handleBlur}
+                      />
+                      <ErrorMessage
+                        name="telefono"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.telefono}</p>
+                        )}
                       />
                     </Form.Group>
                   </Col>
@@ -217,10 +256,15 @@ export default function CatPost() {
                         onChange={handleChange}
                         onBlur={handleBlur}
                       />
+                      <ErrorMessage
+                        name="imagen"
+                        component={() => (
+                          <p className={styles.pErrors}>{errors.imagen}</p>
+                        )}
+                      />
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Form.Group className="mb-3" controlId="descripcion">
                   <Form.Control
                     name="descripcion"
@@ -232,8 +276,13 @@ export default function CatPost() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
+                  <ErrorMessage
+                    name="descripcion"
+                    component={() => (
+                      <p className={styles.pErrors}>{errors.descripcion}</p>
+                    )}
+                  />
                 </Form.Group>
-
                 <Button className="m-2" variant="success" type="submit">
                   Publicar
                 </Button>

@@ -1,8 +1,9 @@
 .imgCat{
-    max-width: 350px;
-    height: 400px;
+    max-width: 400px;
+    height: 450px;
     border-radius: 50%;    
     box-shadow: 0 0 8px 3px rgb(240, 235, 235);
+    margin-top: 3rem;
 }
 
 .divDetail{
@@ -13,3 +14,14 @@
     justify-content: center;
     align-items: center;
 }
+
+.container {  
+    background: radial-gradient(#082338, #103857, #14629e);
+    color: whitesmoke;  
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(6px + 2vmin);
+    font-family:cursive;
+  }

@@ -11,7 +11,19 @@ export default function Nosotros() {
   return (
     <>
       <NavBar />
-      {loader ? <Loading /> : <h1>Nosotros</h1>}
+      {loader ? (
+        <Loading />
+      ) : (
+        <div>
+          <h1>Nosotros</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto
+            adipisci expedita aliquam perferendis. Provident a itaque explicabo
+            nihil excepturi quidem aliquid error optio. Quae ipsum sint enim,
+            dignissimos magnam ut!
+          </p>
+        </div>
+      )}
       <Footer />
     </>
   );

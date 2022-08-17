@@ -22,7 +22,10 @@ export default function NavBar() {
             Cats Love
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
+          <Navbar.Collapse
+            className="justify-content-end"
+            id="responsive-navbar-nav"
+          >
             <Nav className="justify-content-end">
               <Nav.Link href="/home">Inicio</Nav.Link>
               <Nav.Link href="/nosotros">Nosotros</Nav.Link>

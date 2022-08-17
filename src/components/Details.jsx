@@ -28,7 +28,7 @@ export default function Details() {
       {loader ? (
         <Loading />
       ) : (
-        <Container className="mt-5">
+        <Container fluid className={styles.container}>
           <Row>
             <Col className={styles.divDetail}>
               <img
@@ -39,37 +39,35 @@ export default function Details() {
             </Col>
 
             <Col>
-              <div>
-                <p>
-                  <strong>Nombre:</strong> {detailCat.nombre}
-                </p>
-                <p>
-                  <strong>Edad:</strong>{" "}
-                  {parseInt(detailCat.edad).toLocaleString()} meses
-                </p>
-                <p>
-                  <strong>Sexo:</strong> {detailCat.sexo}
-                </p>
-                <p>
-                  <strong>Ciudad:</strong> {detailCat.ciudad}
-                </p>
-                <p>
-                  <strong>Altura:</strong>{" "}
-                  {parseInt(detailCat.altura).toLocaleString()} centímetros
-                </p>
-                <p>
-                  <strong>Peso:</strong>{" "}
-                  {parseInt(detailCat.peso).toLocaleString()} kilogramos
-                </p>
-                <p>
-                  <strong>Teléfono:</strong> {parseInt(detailCat.telefono)}
-                </p>
-                <p>
-                  <strong>Descripción:</strong> {detailCat.descripcion}
-                </p>
-              </div>
+              <p>
+                <strong>Nombre:</strong> {detailCat.nombre}
+              </p>
+              <p>
+                <strong>Edad:</strong>{" "}
+                {parseInt(detailCat.edad).toLocaleString()} meses
+              </p>
+              <p>
+                <strong>Sexo:</strong> {detailCat.sexo}
+              </p>
+              <p>
+                <strong>Ciudad:</strong> {detailCat.ciudad}
+              </p>
+              <p>
+                <strong>Altura:</strong>{" "}
+                {parseInt(detailCat.altura).toLocaleString()} centímetros
+              </p>
+              <p>
+                <strong>Peso:</strong>{" "}
+                {parseInt(detailCat.peso).toLocaleString()} kilogramos
+              </p>
+              <p>
+                <strong>Teléfono:</strong> {parseInt(detailCat.telefono)}
+              </p>
+              <p>
+                <strong>Descripción:</strong> {detailCat.descripcion}
+              </p>
               <Link to="/home">
-                <Button>Volver</Button>
+                <Button variant="info">Volver</Button>
               </Link>
             </Col>
           </Row>

@@ -1,14 +1,20 @@
-import React from 'react'
-import NavBar from './NavBar'
+import React from "react";
+import { Container } from "react-bootstrap";
+import NavBar from "./NavBar";
+import styles from "./Error404.module.css";
 
 export default function Error404() {
   return (
-    <div>
-        <NavBar />
-        <h1>ERROR 404 PAGE NOT FOUND</h1>
-    </div>
-  )
+    <>
+      <NavBar />
+      <Container fluid className="App-header">
+        <img
+          className={styles.img}
+          src={require("../images/fondo_Error404.png")}
+          alt="Error 404"
+        />
+        <h1>ERROR 404 PAGINA NO ENCONTRADA</h1>
+      </Container>
+    </>
+  );
 }
-
-
-

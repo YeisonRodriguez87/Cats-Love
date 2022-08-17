@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import { Formik, ErrorMessage } from "formik";
 import styles from "./CatPost.module.css";
+import Swal from "sweetalert2";
 
 export default function CatPost() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ export default function CatPost() {
         <Loading />
       ) : (
         <Container fluid className="col-5 mt-5 mb-5">
-          <h1>Publica un Michi</h1>
+          <h1>Datos del Michi</h1>
           <Formik
             initialValues={{
               nombre: "",
@@ -99,7 +100,12 @@ export default function CatPost() {
             onSubmit={(input, { resetForm }) => {
               dispatch(postCat(input));
               resetForm();
-              alert("Michi publicad@ con éxito!!");
+              Swal.fire({
+                icon: "success",
+                title: "Michi publicad@ con éxito!",
+                showConfirmButton: false,
+                timer: 2500,
+              });
               navigate("/home");
             }}
           >
@@ -192,7 +198,7 @@ export default function CatPost() {
                         type="number"
                         autoComplete="off"
                         name="edad"
-                        placeholder="Edad en años"
+                        placeholder="Edad en meses"
                         value={values.edad}
                         onChange={handleChange}
                         onBlur={handleBlur}

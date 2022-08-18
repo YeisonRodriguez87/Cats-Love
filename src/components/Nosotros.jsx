@@ -19,13 +19,13 @@ export default function Nosotros() {
           <Row>
             <Col>
               <h1 className="mt-2">Nosotros</h1>
-              <p className="d-flex mt-4">
+              <p className="m-4">
                 Somos una pareja que reside en la ciudad de Buenos Aires
                 apasionada por los michis y por los animales en sí, nos gusta
                 cuidarlos, mimarlos y darles mucho amor. Hace ya casi dos años,
                 nos decidimos a adoptar a nuestro primer gatito y al día de hoy
                 ya son cuatro michis los que nos acompañan día a día en nuestro
-                hogar, Dante, Gio, Mateo y Gucci, ellos nos han enseñado lo que
+                hogar, Dante, Gio, Mateo y Gucci. Ellos nos han enseñado lo que
                 es verdaderamente el amor por los animalitos, lo mal que la
                 pueden pasar si no se les brinda un hogar y los peligros a los
                 que se someten a diario en las calles o en sitios donde
@@ -37,25 +37,25 @@ export default function Nosotros() {
                 <p></p>
               </p>
             </Col>
-            <Col className="m-3">
+            <Col className="mt-3">
               <Carousel fade>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100 rounded"
+                    className="d-block w-100 rounded-3"
                     src={require("../images/carrusel_1.jpeg")}
                     alt="First slide"
                   />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100 rounded"
+                    className="d-block w-100 rounded-3"
                     src={require("../images/carrusel_2.jpeg")}
                     alt="Second slide"
                   />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
-                    className="d-block w-100 rounded"
+                    className="d-block w-100 rounded-3"
                     src={require("../images/carrusel_3.jpeg")}
                     alt="Third slide"
                   />

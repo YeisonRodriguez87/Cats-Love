@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <Container fluid className="mt-2">
+      <Container fluid className="mt-2 App-home">
         <Container className="col-5">
           <Row className="col-11">
             <Col>

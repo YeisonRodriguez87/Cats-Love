@@ -1,5 +1,6 @@
 .img{
     border-radius: 50%;    
     box-shadow: 0 0 8px 3px rgb(240, 235, 235);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }

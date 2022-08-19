@@ -12,7 +12,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 2vmin);
-  font-family:cursive;
+  font-family:'Times New Roman', Times, serif;
+  margin-bottom: 1rem;
 }
 
 .App-home{

@@ -22,17 +22,17 @@ export default function Nosotros() {
               <p className="m-4">
                 Somos una pareja que reside en la ciudad de Buenos Aires
                 apasionada por los michis y por los animales en sí, nos gusta
-                cuidarlos, mimarlos y darles mucho amor. Hace ya casi dos años,
+                cuidarlos, mimarlos y darles mucho amor. En el año 2020,
                 nos decidimos a adoptar a nuestro primer gatito y al día de hoy
                 ya son cuatro michis los que nos acompañan día a día en nuestro
                 hogar, Dante, Gio, Mateo y Gucci. Ellos nos han enseñado lo que
                 es verdaderamente el amor por los animalitos, lo mal que la
                 pueden pasar si no se les brinda un hogar y los peligros a los
                 que se someten a diario en las calles o en sitios donde
-                solamente los maltratan. Por eso tuvimos esta iniciativa de
+                solamente son maltratados. Por eso tuvimos esta iniciativa de
                 crear un nexo entre las personas que tienen algun michi en
                 situación de abandono o que hayan encontrado y quieran buscarle
-                una familia y las personas que quieren darle esa oportunidad de
+                una familia y esas personas que quieren darle esa oportunidad de una nueva y mejor
                 vida, la cual todos los michis merecen.
                 <p></p>
               </p>

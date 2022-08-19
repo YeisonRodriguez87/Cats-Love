@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import Loading from "./Loading";
 import NavBar from "./NavBar";
-import Footer from "./Footer";
+//import Footer from "./Footer";
 import { Formik, ErrorMessage } from "formik";
 import styles from "./CatPost.module.css";
 import Swal from "sweetalert2";
@@ -299,7 +299,7 @@ export default function CatPost() {
           </Formik>
         </Container>
       )}
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }

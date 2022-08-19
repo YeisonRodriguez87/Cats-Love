@@ -29,7 +29,7 @@ export default function CatPost() {
       {loader ? (
         <Loading />
       ) : (
-        <Container fluid className="col-6 mt-5 mb-5">          
+        <Container fluid className="col-lg-6 col-md-8 col-10 mt-5 mb-5">
           <Formik
             initialValues={{
               nombre: "",
@@ -132,7 +132,7 @@ export default function CatPost() {
                     </Form.Group>
                   </Col>
                   <Col className="col-lg-6 col-12 mt-3 mb-4">
-                    <Form.Select                      
+                    <Form.Select
                       name="sexo"
                       value={values.sexo}
                       onChange={handleChange}
@@ -270,7 +270,10 @@ export default function CatPost() {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Form.Group className="col-12 mt-2 mb-1" controlId="descripcion">
+                <Form.Group
+                  className="col-12 mt-2 mb-1"
+                  controlId="descripcion"
+                >
                   <Form.Control
                     name="descripcion"
                     autoComplete="off"

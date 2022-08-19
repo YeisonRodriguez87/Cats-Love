@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
 import Loading from "./Loading";
-import Footer from "./Footer";
+//import Footer from "./Footer";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 
 export default function Nosotros() {
@@ -17,7 +17,7 @@ export default function Nosotros() {
       ) : (
         <Container fluid className="App-header">
           <Row>
-            <Col>
+            <Col className="col-lg-6 col-12 mt-3 mb-4">
               <h1 className="mt-2">Nosotros</h1>
               <p className="m-4">
                 Somos una pareja que reside en la ciudad de Buenos Aires
@@ -65,7 +65,7 @@ export default function Nosotros() {
           </Row>
         </Container>
       )}
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }

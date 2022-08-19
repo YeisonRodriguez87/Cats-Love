@@ -29,8 +29,7 @@ export default function CatPost() {
       {loader ? (
         <Loading />
       ) : (
-        <Container fluid className="col-5 mt-5 mb-5">
-          <h1>Datos del Michi</h1>
+        <Container fluid className="col-6 mt-5 mb-5">          
           <Formik
             initialValues={{
               nombre: "",
@@ -111,9 +110,10 @@ export default function CatPost() {
           >
             {({ values, errors, handleSubmit, handleChange, handleBlur }) => (
               <Form onSubmit={handleSubmit}>
+                <h1>Datos del Michi</h1>
                 <Row>
-                  <Col>
-                    <Form.Group className="mb-4 mt-4" controlId="nombre">
+                  <Col className="col-lg-6 col-12 mt-5 mb-1 mt-lg-3 mb-lg-0">
+                    <Form.Group controlId="nombre">
                       <Form.Control
                         type="text"
                         autoComplete="off"
@@ -131,9 +131,8 @@ export default function CatPost() {
                       />
                     </Form.Group>
                   </Col>
-                  <Col>
-                    <Form.Select
-                      className="mb-4 mt-4"
+                  <Col className="col-lg-6 col-12 mt-3 mb-4">
+                    <Form.Select                      
                       name="sexo"
                       value={values.sexo}
                       onChange={handleChange}
@@ -152,7 +151,7 @@ export default function CatPost() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col>
+                  <Col className="col-lg-6 col-12">
                     <Form.Group className="mb-4" controlId="altura">
                       <Form.Control
                         type="number"
@@ -171,7 +170,7 @@ export default function CatPost() {
                       />
                     </Form.Group>
                   </Col>
-                  <Col>
+                  <Col className="col-lg-6 col-12">
                     <Form.Group className="mb-4" controlId="peso">
                       <Form.Control
                         type="number"
@@ -192,7 +191,7 @@ export default function CatPost() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col>
+                  <Col className="col-lg-6 col-12">
                     <Form.Group className="mb-4" controlId="edad">
                       <Form.Control
                         type="number"
@@ -211,7 +210,7 @@ export default function CatPost() {
                       />
                     </Form.Group>
                   </Col>
-                  <Col>
+                  <Col className="col-lg-6 col-12">
                     <Form.Group className="mb-4" controlId="ciudad">
                       <Form.Control
                         type="text"
@@ -232,7 +231,7 @@ export default function CatPost() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col>
+                  <Col className="col-lg-6 col-12">
                     <Form.Group className="mb-4" controlId="telefono">
                       <Form.Control
                         type="tel"
@@ -251,7 +250,7 @@ export default function CatPost() {
                       />
                     </Form.Group>
                   </Col>
-                  <Col>
+                  <Col className="col-lg-6 col-12">
                     <Form.Group className="mb-4" controlId="imagen">
                       <Form.Control
                         type="text"
@@ -271,7 +270,7 @@ export default function CatPost() {
                     </Form.Group>
                   </Col>
                 </Row>
-                <Form.Group className="mb-3" controlId="descripcion">
+                <Form.Group className="col-12 mt-2 mb-1" controlId="descripcion">
                   <Form.Control
                     name="descripcion"
                     autoComplete="off"

@@ -8,14 +8,14 @@ export default function LandingPage() {
     <>
       <Container fluid className="App-header">
         <Row>
-          <Col>
+          <Col className="col-lg-6 col-12 mt-5 mb-5">
             <img
               className={styles.imgLanding}
               src={require("../images/fondo_Landing.png")}
               alt="foto-landing"
             />
           </Col>
-          <Col className="mt-5">
+          <Col className="col-lg-6 col-12 mt-lg-5 mt-1 mb-lg-0 mb-4">
             <h1>😻¡Bienvenid@ a Cats Love!</h1>
             <p className="text-center mt-5 mb-4">
               ❤️Un lugar en donde vas a encontrar al amor de tu vida❤️​

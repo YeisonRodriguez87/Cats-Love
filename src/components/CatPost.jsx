@@ -20,7 +20,7 @@ export default function CatPost() {
     dispatch(postCat());
     setTimeout(() => {
       setLoader(false);
-    }, 2500);
+    }, 2000);
   }, [dispatch]);
 
   return (

@@ -2,3 +2,10 @@
     border-radius: 50%;    
     box-shadow: 0 0 8px 3px rgb(240, 235, 235);
 }
+
+@media (max-width: 576px) {
+    .imgLanding {
+        max-width: 350px;
+        height: 400px;
+    }
+  }

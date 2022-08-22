@@ -8,7 +8,7 @@ export default function Nosotros() {
   const [loader, setLoader] = useState(true);
   setTimeout(() => {
     setLoader(false);
-  }, 2500);
+  }, 2000);
   return (
     <>
       <NavBar />

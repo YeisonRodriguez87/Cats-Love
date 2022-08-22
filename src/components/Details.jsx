@@ -19,7 +19,7 @@ export default function Details() {
     dispatch(getDetailsCat(id));
     setTimeout(() => {
       setLoader(false);
-    }, 2500);
+    }, 2000);
   }, [dispatch, id]);
 
   return (

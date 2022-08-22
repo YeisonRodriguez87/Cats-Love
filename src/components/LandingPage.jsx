@@ -8,7 +8,7 @@ export default function LandingPage() {
     <>
       <Container fluid className="App-header">
         <Row>
-          <Col className="col-lg-6 col-12 mt-5 mb-5">
+          <Col className="col-lg-6 col-12 mt-5 mt-lg-0 mb-5">
             <img
               className={styles.imgLanding}
               src={require("../images/fondo_Landing.png")}

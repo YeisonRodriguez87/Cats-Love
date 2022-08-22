@@ -30,7 +30,7 @@ export default function Details() {
       ) : (
         <Container fluid className={styles.container}>
           <Row>
-            <Col className="col-lg-6 col-12 mt-0 mb-5">
+            <Col className="col-lg-6 col-10 mt-0 mb-5">
               <img
                 alt="foto perfil"
                 src={detailCat.imagen}
@@ -38,7 +38,7 @@ export default function Details() {
               />
             </Col>
 
-            <Col className="col-lg-6 col-12 mt-lg-5 mt-1 mb-lg-0 mb-4">
+            <Col className="col-lg-6 col-10 mt-lg-5 mt-1 mb-lg-0 mb-4">
               <p>
                 <strong>Nombre:</strong> {detailCat.nombre}
               </p>

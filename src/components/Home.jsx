@@ -57,7 +57,7 @@ export default function Home() {
       <NavBar />
       <Container fluid className="mt-2 App-home">
         <Container className="col-lg-5 col-10 mt-1 mb-1 mt-lg-3 mb-lg-0">
-          <Row className="col-11">
+          <Row className="col-lg-11 col-10">
             <Col>
               <Form.Select size="md" className="mt-5" onChange={handleOrdered}>
                 <option>Ordenar por</option>

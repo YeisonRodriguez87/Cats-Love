@@ -56,10 +56,10 @@ export default function Home() {
     <>
       <NavBar />
       <Container fluid className="mt-2 App-home">
-        {/*<Container className="d-flex col-lg-5 col-10 mt-1 mb-1 mt-lg-3 mb-lg-0">
-          <Row className="d-flex col-lg-11 col-10">
-            <Col>
-              <Form.Select size="md" className="mt-5" onChange={handleOrdered}>
+        <Container className="d-flex col-lg-5 col-8 mt-1 mb-1 mt-lg-3 mb-lg-0">
+          <Row className="d-flex col-lg-11 col-12">
+            <Col className="col-lg-5 col-12 mt-1 mb-1 mt-lg-3 mb-lg-0">
+              <Form.Select size="md" className="mt-lg-5 mt-4" onChange={handleOrdered}>
                 <option>Ordenar por</option>
                 <option value="Asc">A-Z</option>
                 <option value="Desc">Z-A</option>
@@ -67,10 +67,10 @@ export default function Home() {
                 <option value="Menor">Menor edad</option>
               </Form.Select>
             </Col>
-            <Col>
+            <Col className="col-lg-5 col-12 mt-1 mb-1 mt-lg-3 mb-lg-0">
               <Form.Select
                 size="md"
-                className="mt-5"
+                className="mt-lg-5 mt-1"
                 onChange={handleFilterSex}
               >
                 <option>Filtrar por</option>
@@ -79,9 +79,9 @@ export default function Home() {
                 <option value="Hembra">Hembra</option>
               </Form.Select>
             </Col>
-            <Col className="col-1">
+            <Col className="col-lg-1 col-12 mt-1 mb-1 mt-lg-3 mb-lg-0">
               <Button
-                className="mt-5"
+                className="mt-lg-5 mt-1"
                 size="md"
                 as="input"
                 type="reset"
@@ -93,7 +93,7 @@ export default function Home() {
               />
             </Col>
           </Row>
-        </Container>*/}
+        </Container>
         <Paginated
           catsPerPage={catsPerPage}
           allCats={allCats.length}

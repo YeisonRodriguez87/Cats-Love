@@ -50,7 +50,7 @@ __Ruta de posteo de gato en adopción__- Contiene:
 __🚨IMPORTANTE:🚨__ Es necesario contar mínimamente con la última versión estable de Node y NPM. Asegurese de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
 
-Actualmente (Agosto 2022) las versiónes necesarias son:
+Actualmente (Agosto de 2022) las versiónes necesarias son:
 
  * __Node__: 16.15.1 o mayor
  * __NPM__: 8.11.0 o mayor

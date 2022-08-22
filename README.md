@@ -6,23 +6,23 @@
 
 ## 📝Descripción:
 
-<p>En este proyecto se desarrolló una SPA (Single Page Application), en la cual se pueden ver diversa cantidad de gatos en adopción, para que así se puedan contactar con quien los tiene y les puedan dar un hogar. Los mismos son posteados por las personas que los encuentren y que no puedan tenerlos con ellos o cuidarlos. La misma tiene funcionalidades tales como filtrar/ordenar gatos por sexo, paginado para poder ver 6 gatos por página y formulario para postear gatos para ser adoptados.
+<p>En este proyecto se desarrolló una SPA (Single Page Application), en la cual se pueden ver diversa cantidad de gatos en adopción, para que así se puedan contactar con quien los tiene y les puedan dar un hogar. Los mismos son posteados por las personas que los encuentren y que no puedan tenerlos con ellos o cuidarlos. La misma tiene funcionalidades tales como filtrar/ordenar gatos por sexo y por edad, paginado para poder ver 8 gatos por página y formulario para postear gatos para ser adoptados.
 </p>
 
 #### Funcionalidades
 
 __Pagina inicial__- Landing page con:
-- [ ] Imagen de fondo representativa del proyecto.
+- [ ] Imagen representativa del proyecto.
 - [ ] Botón para ingresar al home (`Ruta principal`)
 
 __Ruta principal__- Contiene:
-- [ ] Área donde se verá el listado de gatos con su imagen, nombre, edad y ciudad.
+- [ ] Área donde se verá el listado de gatos con su imagen, nombre, edad, sexo y ciudad.
 - [ ] Botones/Opciones para filtrar por sexo.
 - [ ] Botones/Opciones para ordenar tanto ascendente como descendentemente los gatos por orden alfabético y por edad.
-- [ ] Paginado para ir buscando y mostrando los siguientes gatos, 6 gatos por pagina.
+- [ ] Paginado para ir buscando y mostrando los siguientes gatos, 8 gatos por pagina.
 
 __Ruta de detalle de gato__- Contiene:
-- [ ] Los campos mostrados en la ruta principal para cada gato (imagen, nombre, edad y ciudad)
+- [ ] Los campos mostrados en la ruta principal para cada gato (imagen, nombre, edad, sexo y ciudad)
 - [ ] Descripción.
 - [ ] Teléfono.
 - [ ] Altura.
@@ -63,8 +63,11 @@ Para verificar que versión tienen instalada:
 
 
 #### Tecnologías usadas:
-- [ ] Bootstrap
-- [ ] React
+- [ ] ReactJS
+- [ ] React-Bootstrap
+- [ ] React-Formik
+- [ ] React-Router
+- [ ] SweetAlert2
 - [ ] Redux
-- [ ] Express
+- [ ] NodeJS-Express
 - [ ] Sequelize - MySQL

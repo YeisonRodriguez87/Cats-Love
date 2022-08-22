@@ -69,8 +69,8 @@ export default function CatPost() {
               }
               if (!input.edad) {
                 errors.edad = "*Edad requerida";
-              } else if (input.edad < 1 || input.edad > 20) {
-                errors.edad = "*La edad debe ser entre 1 y 20 años";
+              } else if (input.edad < 1 || input.edad > 180) {
+                errors.edad = "*La edad debe ser entre 1 y 180 meses";
               }
               if (!input.ciudad.trim()) {
                 errors.ciudad = "*Ciudad requerida";

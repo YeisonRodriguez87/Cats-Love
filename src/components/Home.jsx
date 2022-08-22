@@ -7,7 +7,6 @@ import Loading from "./Loading";
 import { Link } from "react-router-dom";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import styles from "./Home.module.css";
-//import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 export default function Home() {
@@ -59,7 +58,11 @@ export default function Home() {
         <Container className="d-flex col-lg-5 col-8 mt-1 mb-1 mt-lg-3 mb-lg-0">
           <Row className="d-flex col-lg-11 col-12">
             <Col className="col-lg-5 col-12 mt-1 mb-1 mt-lg-3 mb-lg-0">
-              <Form.Select size="md" className="mt-lg-5 mt-4" onChange={handleOrdered}>
+              <Form.Select
+                size="md"
+                className="mt-lg-5 mt-4"
+                onChange={handleOrdered}
+              >
                 <option>Ordenar por</option>
                 <option value="Asc">A-Z</option>
                 <option value="Desc">Z-A</option>
@@ -124,7 +127,6 @@ export default function Home() {
           )}
         </div>
       </Container>
-      {/*<Footer />*/}
     </>
   );
 }

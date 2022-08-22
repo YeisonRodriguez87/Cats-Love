@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
-//import NavBar from "./NavBar";
 import styles from "./Error404.module.css";
 import { Link } from "react-router-dom";
 
@@ -16,7 +15,9 @@ export default function Error404() {
         />
         <h2>PÁGINA NO ENCONTRADA</h2>
         <Link to="/home">
-          <Button variant="info" className="mt-3">Inicio</Button>
+          <Button variant="info" className="mt-3">
+            Inicio
+          </Button>
         </Link>
       </Container>
     </>

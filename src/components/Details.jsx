@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import Loading from "./Loading";
 import NavBar from "./NavBar";
-//import Footer from "./Footer"
 import styles from "./Details.module.css";
 
 export default function Details() {
@@ -73,7 +72,6 @@ export default function Details() {
           </Row>
         </Container>
       )}
-      {/*<Footer />*/}
     </>
   );
 }

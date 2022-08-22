@@ -12,13 +12,13 @@
   align-items: center;
   justify-content: center;
   font-size: calc(8px + 2vmin);
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
 }
 
 .App-home{
   font-size: calc(8px + 2vmin);
-  font-family:cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 

@@ -1,14 +1,14 @@
 .imgCat{
-    max-width: 350px;
-    height: 400px;
+    max-width: 400px;
+    height: 450px;
     border-radius: 50%;    
     box-shadow: 0 0 8px 3px rgb(240, 235, 235);
     margin-top: 3rem;
 }
 
 .divDetail{
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 250px;
     margin-top: 4rem;
     display: flex;
     justify-content: center;
@@ -27,6 +27,9 @@
   }
 
 
-  @media screen {
-    
+  @media (max-width: 576px) {
+    .imgCat {
+        max-width: 300px;
+        height: 350px;
+    }
   }

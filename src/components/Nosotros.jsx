@@ -36,7 +36,7 @@ export default function Nosotros() {
                 <p></p>
               </p>
             </Col>
-            <Col className="mt-3">
+            <Col className="mt-lg-5 mt-1">
               <Carousel fade>
                 <Carousel.Item>
                   <img
